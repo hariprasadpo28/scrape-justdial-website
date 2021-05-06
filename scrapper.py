@@ -31,7 +31,7 @@ driver = webdriver.Chrome(ChromeDriverManager().install())
 driver.get(url)
 driver.execute_script("window.scrollTo(0,document.body.scrollHeight)")                   # Just dial website does not load fully if we stay at the top and it will load dynamically as we scroll down.
                                                                                          # So, to avoid this the web page is scrolled to bottom and the program is freezed for 7 seconds to load the web page fully
-time.sleep(7)
+time.sleep(7)                                                                            # time can be adjusted according to preferences or can be removed
 vendor_info = driver.find_elements_by_class_name('store-details')
 
 for i in range(len(vendor_info)):
@@ -78,4 +78,4 @@ dic = {
 df = pd.DataFrame(dic)
 
 print(df.head())
-df.to_excel('banglore_fashion.xlsx', index = False)
+df.to_excel('result.xlsx', index = False)
